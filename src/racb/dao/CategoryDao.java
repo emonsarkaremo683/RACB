@@ -18,7 +18,7 @@ import racb.service.DaoService;
 
 /**
  *
- * @author jobair
+ * @author Emon
  */
 public abstract class CategoryDao implements DaoService<Category> {
 
