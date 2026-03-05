@@ -18,7 +18,7 @@ public class DBConnection {
     
     private Connection con;
     
-    public Connection getCon(){
+    public Connection getConn(){
         try {
             Class.forName(driver);
             con = DriverManager.getConnection(url, user, pass);
