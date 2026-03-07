@@ -22,6 +22,14 @@ public class Client {
         this.address = address;
     }
 
+    public Client(int id, String name, String number, String address) {
+        this.id = id;
+        this.name = name;
+        this.number = number;
+        this.address = address;
+    }
+    
+
     public Client(int id, String name, String number, String address, double balance) {
         this.id = id;
         this.name = name;

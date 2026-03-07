@@ -26,6 +26,14 @@ public class ClientDetails {
         this.memoId = memoId;
     }
 
+    public ClientDetails(int id, double balance, long memoId) {
+        this.id = id;
+        this.balance = balance;
+        this.memoId = memoId;
+    }
+    
+    
+
     public int getId() {
         return id;
     }

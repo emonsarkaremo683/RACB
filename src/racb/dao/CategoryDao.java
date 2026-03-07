@@ -35,7 +35,7 @@ public abstract class CategoryDao implements DaoService<Category> {
         try {
             ps = dbc.getConn().prepareStatement(sql);
             ps.setString(1, e.getName());
-            ps.setInt(1, e.getSupplierId());
+            ps.setInt(2, e.getSupplierId());
             ps.executeUpdate();
             ps.close();
             dbc.getConn().close();
