@@ -1,53 +1,34 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package racb.model;
 
-/**
- *
- * @author jobair
- */
+import java.util.Date;
+
+
 public class Memo {
-    
-    int id, productId, typeId;
-    double quantity, unitPrice, totalPrice, totalBalance, dueBalance, netBalance;
-    String productName;
-    long memoNo;
-    
-     public Memo() {
+
+    int id;
+    int userId;
+    Date date;
+    double totalAmount;
+    String invoiceNo;
+    String name;
+
+    public Memo() {
     }
 
-    public Memo(long memoNo, int productId, double quantity, double unitPrice, double totalPrice) {
-        this.productId = productId;
-        this.memoNo = memoNo;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-        this.totalPrice = totalPrice;
+    public Memo(int userId, Date date, double totalAmount, String invoiceNo) {
+        this.userId = userId;
+        this.date = date;
+        this.totalAmount = totalAmount;
+        this.invoiceNo = invoiceNo;
     }
 
-    public Memo(double totalBalance, int typeId, long memoNo, double dueBalance, double netBalance) {
-        this.typeId = typeId;
-        this.memoNo = memoNo;
-        this.totalBalance = totalBalance;
-        this.dueBalance = dueBalance;
-        this.netBalance = netBalance;
-    }
-
-    public Memo(int id, String productName, double quantity, double unitPrice, double totalPrice) {
+    public Memo(int id, Date date, double totalAmount, String invoiceNo, double discountRate, String name) {
         this.id = id;
-        this.quantity = quantity;
-        this.unitPrice = unitPrice;
-        this.totalPrice = totalPrice;
-        this.productName = productName;
-    }
-
-    public Memo(int typeId, long memoNo, double totalBalance, double dueBalance, double netBalance) {
-        this.typeId = typeId;
-        this.memoNo = memoNo;
-        this.totalBalance = totalBalance;
-        this.dueBalance = dueBalance;
-        this.netBalance = netBalance;
+        this.date = date;
+        this.totalAmount = totalAmount;
+        this.invoiceNo = invoiceNo;       
+        this.name = name;
     }
 
     public int getId() {
@@ -58,98 +39,50 @@ public class Memo {
         this.id = id;
     }
 
-    public int getProductId() {
-        return productId;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setProductId(int productId) {
-        this.productId = productId;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getTypeId() {
-        return typeId;
+    public Date getDate() {
+        return date;
     }
 
-    public void setTypeId(int typeId) {
-        this.typeId = typeId;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public double getQuantity() {
-        return quantity;
+    public double getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
-    public double getUnitPrice() {
-        return unitPrice;
+    public String getInvoiceNo() {
+        return invoiceNo;
     }
 
-    public void setUnitPrice(double unitPrice) {
-        this.unitPrice = unitPrice;
+    public void setInvoiceNo(String invoiceNo) {
+        this.invoiceNo = invoiceNo;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public String getName() {
+        return name;
     }
 
-    public void setTotalPrice(double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public double getTotalBalance() {
-        return totalBalance;
-    }
-
-    public void setTotalBalance(double totalBalance) {
-        this.totalBalance = totalBalance;
-    }
-
-    public double getDueBalance() {
-        return dueBalance;
-    }
-
-    public void setDueBalance(double dueBalance) {
-        this.dueBalance = dueBalance;
-    }
-
-    public double getNetBalance() {
-        return netBalance;
-    }
-
-    public void setNetBalance(double netBalance) {
-        this.netBalance = netBalance;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
-
-    public long getMemoNo() {
-        return memoNo;
-    }
-
-    public void setMemoNo(long memoNo) {
-        this.memoNo = memoNo;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
-        return "Memo{" + "id=" + id + ", productId=" + productId + ", typeId=" + typeId + ", quantity=" + quantity + ", unitPrice=" + unitPrice + ", totalPrice=" + totalPrice + ", totalBalance=" + totalBalance + ", dueBalance=" + dueBalance + ", netBalance=" + netBalance + ", productName=" + productName + ", memoNo=" + memoNo + '}';
+        return "Memo{" + "id=" + id + ", userId=" + userId + ", date=" + date + ", totalAmount=" + totalAmount + ", invoiceNo=" + invoiceNo + ", name=" + name + '}';
     }
-    
-    
-    
 
-   
-    
-    
-    
-    
-    
 }
+

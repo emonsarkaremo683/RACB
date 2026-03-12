@@ -30,12 +30,11 @@ public abstract class CategoryDao implements DaoService<Category> {
 
     @Override
     public void saveData(Category e) {
-        sql = "insert into category(name, supplierId) values(?,?)";
+        sql = "insert into category(name) values(?)";
 
         try {
             ps = dbc.getConn().prepareStatement(sql);
             ps.setString(1, e.getName());
-            ps.setInt(2, e.getSupplierId());
             ps.executeUpdate();
             ps.close();
             dbc.getConn().close();
@@ -48,13 +47,13 @@ public abstract class CategoryDao implements DaoService<Category> {
 
     @Override
     public void updateData(Category e) {
-        sql = "update category set name = ?, supplierId = ? where id = ?";
+        sql = "update category set name = ? where id = ?";
 
         try {
             ps = dbc.getConn().prepareStatement(sql);
             ps.setString(1, e.getName());
-            ps.setInt(2, e.getSupplierId());
-            ps.setInt(3, e.getId());
+
+            ps.setInt(2, e.getId());
             ps.executeUpdate();
             ps.close();
             dbc.getConn().close();
@@ -67,9 +66,7 @@ public abstract class CategoryDao implements DaoService<Category> {
 
     @Override
     public List<Category> showAllData() {
-        sql = "select c.id, c.name, s.supplierName from category c"
-                + " join supplier s"
-                + " on s.id = c.supplierId";
+        sql = "select id, name from category ";
         List<Category> list = new ArrayList<>();
         try {
             ps = dbc.getConn().prepareStatement(sql);
@@ -79,7 +76,6 @@ public abstract class CategoryDao implements DaoService<Category> {
                 c = new Category();
                 c.setId(rs.getInt("id"));
                 c.setName(rs.getString("name"));
-                c.setName(rs.getString("s.supplierName"));
                 list.add(c);
             }
             ps.close();

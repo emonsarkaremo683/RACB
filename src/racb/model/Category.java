@@ -12,31 +12,18 @@ public class Category {
     
     int id;
     String name;
-    int supplierId;
-    String supplierName;
 
     public Category() {
     }
 
-    public Category(String name, int supplierId) {
+    public Category(String name) {
         this.name = name;
-        this.supplierId = supplierId;
     }
 
-    public Category(int id, String name, String supplierName) {
+    public Category(int id, String name) {
         this.id = id;
         this.name = name;
-        this.supplierName = supplierName;
     }
-
-    public String getSupplierName() {
-        return supplierName;
-    }
-
-    public void setSupplierName(String supplierName) {
-        this.supplierName = supplierName;
-    }
-    
 
     public int getId() {
         return id;
@@ -53,21 +40,5 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getSupplierId() {
-        return supplierId;
-    }
-
-    public void setSupplierId(int supplierId) {
-        this.supplierId = supplierId;
-    }
-
-    @Override
-    public String toString() {
-        return "Category{" + "id=" + id + ", name=" + name + ", supplierId=" + supplierId + '}';
-    }
-    
-    
-    
     
 }
